@@ -1,3 +1,4 @@
+import re
 from typing import List
 
 from rest_framework import serializers
@@ -51,6 +52,7 @@ class BasePageSerializer(serializers.ModelSerializer):
             return None
 
         html = wagtailuserbar({"request": request, "self": page})
+        html = re.sub(r"<script.+?</script>", "", html, flags=re.DOTALL)
 
         if not html:
             return None

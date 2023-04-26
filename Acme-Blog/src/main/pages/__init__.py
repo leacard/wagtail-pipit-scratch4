@@ -4,3 +4,9 @@ from .home import *  # NOQA
 from .home_serializer import *  # NOQA
 from .article import *  # NOQA
 from .article_serializer import *  # NOQA
+from .about import *  # NOQA
+from .about_serializer import *  # NOQA
+from .cards import *  # NOQA
+from .cards_serializer import *  # NOQA
+from .atest import *  # NOQA
+from .atest_serializer import *  # NOQA
