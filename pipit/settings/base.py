@@ -53,7 +53,7 @@ INSTALLED_APPS = [
     #"search",
     # Third party apps
     #"storages",
-    "wagtail.embeds",
+    #"wagtail.embeds",
     "wagtail.sites",
     "wagtail.users",
     "wagtail.snippets",
@@ -156,7 +156,7 @@ WSGI_APPLICATION = "pipit.wsgi.application"
         "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
     }
 }
-"""
+
 DATABASES = {
     "default": {
         "ENGINE": "django.contrib.gis.db.backends.postgis",
@@ -167,7 +167,18 @@ DATABASES = {
         "PORT": int(get_env("DATABASE_PORT", default="5432")),
     }
 }
+"""
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        "NAME": get_env("DATABASE_NAME", required=True),
+        "USER": get_env("DATABASE_USER", required=True),
+        "PASSWORD": get_env("DATABASE_PASSWORD", required=True),
+        "HOST": get_env("DATABASE_HOST", required=True),
+        "PORT": int(get_env("DATABASE_PORT", default="5432")),
+    }
+}
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
 # Password validation
