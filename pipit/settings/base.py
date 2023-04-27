@@ -150,13 +150,13 @@ WSGI_APPLICATION = "pipit.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-"""DATABASES = {
+DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
     }
 }
-
+"""
 DATABASES = {
     "default": {
         "ENGINE": "django.contrib.gis.db.backends.postgis",
@@ -167,7 +167,7 @@ DATABASES = {
         "PORT": int(get_env("DATABASE_PORT", default="5432")),
     }
 }
-"""
+
 
 DATABASES = {
     'default': {
@@ -179,6 +179,7 @@ DATABASES = {
         "PORT": int(get_env("DATABASE_PORT", default="5432")),
     }
 }
+"""
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
 # Password validation
